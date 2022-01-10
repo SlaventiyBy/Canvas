@@ -1,131 +1,101 @@
-﻿function drawHouse() {
+function drawHouse() {
   let canvas = document.getElementById('canvas');
-  if (canvas.getContext) {
+  
+  if(canvas.getContext) {
     let ctx = canvas.getContext('2d');
 
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    // Стены    
-    ctx.beginPath();
-    ctx.moveTo(50, 180); //начало
-    ctx.lineTo(300, 180); // линия вправо
-    ctx.lineTo(300, 380); // линия вниз
-    ctx.lineTo(50, 380); // линия влево
-    ctx.closePath(); // смыкание начала и конца рисунка (левая стена)
-    ctx.fillStyle = '#975b5b'; // цвет заливки
-    ctx.fill(); // вызов заливки
-    ctx.strokeStyle = '#000'; // цвет линиии
-    ctx.lineWidth = 2; // толщина линии
-    ctx.stroke();
+    //Стены
+    ctx.lineWidth = 4;
+    ctx.strokeRect(735, 254, 450, 335);
+
+    ctx.fillStyle = '#975b5b';
+    ctx.fillRect(737, 256, 446, 331);
+    
+    //Окна
+    ctx.fillStyle = '#000';
+    ctx.fillRect(768, 293, 78, 50);
+    ctx.fillRect(850, 293, 78, 50);
+    ctx.fillRect(768, 347, 78, 50);
+    ctx.fillRect(850, 347, 78, 50);
+
+    ctx.fillRect(987, 293, 78, 50);
+    ctx.fillRect(1069, 293, 78, 50);
+    ctx.fillRect(987, 347, 78, 50);
+    ctx.fillRect(1069, 347, 78, 50);
+
+    ctx.fillRect(987, 436, 78, 50);
+    ctx.fillRect(1069, 436, 78, 50);
+    ctx.fillRect(987, 489, 78, 50);
+    ctx.fillRect(1069, 489, 78, 50);
 
     // Крыша
     ctx.beginPath();
-    ctx.moveTo(175, 50); //начало
-    ctx.lineTo(300, 180); // линия вниз
-    ctx.lineTo(50, 180); // линия влево
-    ctx.closePath(); // смыкание начала и конца рисунка (левая стена)
-    ctx.fillStyle = '#975b5b'; // цвет заливки
-    ctx.fill(); // вызов заливки
-    ctx.strokeStyle = '#000'; // цвет линиии
-    ctx.lineWidth = 2; // толщина линии
-    ctx.stroke();
-
-    // Левое онко
-    //1
-    ctx.fillStyle = "#000";
-    ctx.fillRect(70, 200, 45, 30);
-    //2
-    ctx.fillRect(117, 200, 45, 30);
-    //3
-    ctx.fillRect(70, 232, 45, 30);
-    //4
-    ctx.fillRect(117, 232, 45, 30);
-
-    // правое верхнее онко
-    //1
-    ctx.fillRect(188, 200, 45, 30);
-    //2
-    ctx.fillRect(235, 200, 45, 30);
-    //3
-    ctx.fillRect(188, 232, 45, 30);
-    //4
-    ctx.fillRect(235, 232, 45, 30);
-
-    // правое нижнее онко
-    //1
-    ctx.fillRect(188, 285, 45, 30);
-    //2
-    ctx.fillRect(235, 285, 45, 30);
-    // 3
-    ctx.fillRect(188, 317, 45, 30);
-    // 4
-    ctx.fillRect(235, 317, 45, 30);
-
-    // Дверь
-    //Левая линия
-    ctx.beginPath();
-    ctx.moveTo(80, 305); //начало
-    ctx.lineTo(80, 380); // линия вниз
-    ctx.strokeStyle = '#000'; // цвет линиии
-    ctx.lineWidth = 2; // толщина линии
-    ctx.stroke();
-
-    //Правая линия
-    ctx.beginPath();
-    ctx.moveTo(156, 305); //начало
-    ctx.lineTo(156, 380); // линия вниз
-    ctx.strokeStyle = '#000'; // цвет линиии
-    ctx.lineWidth = 2; // толщина линии
-    ctx.stroke();
-
-    //Центральная линия
-    ctx.beginPath();
-    ctx.moveTo(117, 285); //начало
-    ctx.lineTo(117, 380); // линия вниз
-    ctx.strokeStyle = '#000'; // цвет линиии
-    ctx.lineWidth = 2; // толщина линии
-    ctx.stroke();
-
-    //Верхняя полукгруглая линия    
-    ctx.beginPath();
-    ctx.ellipse(118, 306, 38, 20, Math.PI, 0, Math.PI, false);
-    ctx.stroke();
-    //Ручка1
-    ctx.beginPath();
-    ctx.arc(108, 356, 4, 0, Math.PI * 2, true);
-    ctx.stroke();
-
-    //Ручка2
-    ctx.beginPath();
-    ctx.arc(126, 356, 4, 0, Math.PI * 2, true);
+    ctx.moveTo(960, 8);
+    ctx.lineTo(1184, 254);
+    ctx.lineTo(736, 254);
+    ctx.closePath();
+    ctx.fillStyle = '#975b5b';
+    ctx.fill();
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 4;
     ctx.stroke();
 
     //Труба
-    //Левая линия  
-    ctx.fillStyle = "#975b5b";
-    ctx.fillRect(237, 95, 26, 60);  
+    ctx.fillStyle = '#975b5b';
+    ctx.fillRect(1050, 70, 47, 110);
+    
     ctx.beginPath();
-    ctx.moveTo(237, 95); //начало
-    ctx.lineTo(237, 160); // линия вниз
-    ctx.strokeStyle = '#000'; // цвет линиии
-    ctx.lineWidth = 2; // толщина линии    
-    ctx.stroke();
-    //Правая линия
-    ctx.beginPath();
-    ctx.moveTo(263, 95); //начало
-    ctx.lineTo(263, 160); // линия вниз
-    ctx.strokeStyle = '#000'; // цвет линиии
-    ctx.lineWidth = 2; // толщина линии
+    ctx.moveTo(1048, 68);    
+    ctx.lineTo(1048, 190); 
+    ctx.strokeStyle = '#000';      
     ctx.stroke();
 
-    //Верхняя полукгруглая линия
-    ctx.fillStyle = '#975b5b';    
-    ctx.beginPath();    
-    ctx.ellipse(250, 95, 13, 3, Math.PI, 0, Math.PI * 2, false);
+    ctx.beginPath();
+    ctx.moveTo(1098, 68);    
+    ctx.lineTo(1098, 190); 
+    ctx.strokeStyle = '#000';      
+    ctx.stroke();
+    
+    ctx.fillStyle = '#975b5b';
+    ctx.beginPath();
+    ctx.ellipse(1073, 67, 24, 4, Math.PI, 0, Math.PI * 2, false);
     ctx.fill();
     ctx.stroke();
-  }  
+
+    //Дверь
+    ctx.beginPath();
+    ctx.moveTo(786, 469);    
+    ctx.lineTo(786, 591); 
+    ctx.strokeStyle = '#000';      
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(849, 439);    
+    ctx.lineTo(849, 591); 
+    ctx.strokeStyle = '#000';      
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(912, 469);    
+    ctx.lineTo(912, 591); 
+    ctx.strokeStyle = '#000';      
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.ellipse(849, 469, 63, 30, Math.PI, 0, Math.PI, false);    
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(830, 543, 7, 0, Math.PI * 2, true);    
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(868, 543, 7, 0, Math.PI * 2, true);    
+    ctx.stroke();
+  }    
 }
 
 drawHouse();
